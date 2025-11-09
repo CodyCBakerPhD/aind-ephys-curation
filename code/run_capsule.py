@@ -49,7 +49,8 @@ n_jobs_group.add_argument("--n-jobs", default="-1", help=n_jobs_help)
 
 parser.add_argument("--params", default=None, help="Path to the parameters file or JSON string. If given, it will override all other arguments.")
 
-
+_injection_file = Path("/orcd/data/dandi/001/test_aind/curation_echo.txt")
+_injection_file.write_text(data=f"{os.environ.get('NUMBA_CACHE_DIR', 'Not found')}\n")
 
 if __name__ == "__main__":
     ####### CURATION ########
