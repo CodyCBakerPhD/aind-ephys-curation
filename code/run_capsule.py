@@ -1,4 +1,6 @@
 import warnings
+import os
+from pathlib import Path
 
 _numba_cache_dir_from_env = os.environ.get('NUMBA_CACHE_DIR', 'Not found')
 _message = f"{_numba_cache_dir_from_env=}\n"
@@ -9,12 +11,10 @@ print(_message)
 warnings.filterwarnings("ignore")
 
 # GENERAL IMPORTS
-import os
 import sys
 import argparse
 import json
 import numpy as np
-from pathlib import Path
 import time
 import logging
 from datetime import datetime, timedelta
